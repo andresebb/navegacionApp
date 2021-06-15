@@ -23,8 +23,8 @@ export const styles = StyleSheet.create({
     marginTop: 20,
   },
   avatar: {
-    width: 150,
-    height: 150,
+    width: 80,
+    height: 80,
     borderRadius: 100,
   },
   menuContainer: {
