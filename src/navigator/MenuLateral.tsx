@@ -12,6 +12,7 @@ import {View} from 'react-native';
 import {Image} from 'react-native';
 import {styles} from '../theme/appTheme';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import {Tabs} from './Tabs';
 const Drawer = createDrawerNavigator();
 
 export const MenuLateral = () => {
@@ -21,7 +22,7 @@ export const MenuLateral = () => {
     <Drawer.Navigator
       drawerType={dimensions.width >= 768 ? 'permanent' : 'front'}
       drawerContent={props => <MenuInterno {...props} />}>
-      <Drawer.Screen name="StackNavigator" component={StackNavigator} />
+      <Drawer.Screen name="Tabs" component={Tabs} />
       <Drawer.Screen name="SettingScreen" component={SettingScreen} />
     </Drawer.Navigator>
   );
@@ -45,7 +46,7 @@ const MenuInterno = ({
       <View style={styles.menuContainer}>
         <TouchableOpacity
           style={styles.menuBoton}
-          onPress={() => navigation.navigate('StackNavigator')}>
+          onPress={() => navigation.navigate('Tabs')}>
           <Text style={styles.menuTexto}>Navegacion</Text>
         </TouchableOpacity>
 
