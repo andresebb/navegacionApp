@@ -21,7 +21,7 @@ export const MenuLateral = () => {
   return (
     <Drawer.Navigator
       drawerType={dimensions.width >= 768 ? 'permanent' : 'front'}
-      edgeWidth={200}
+      edgeWidth={120}
       drawerStyle={{
         backgroundColor: '#c6cbef',
         width: 240,

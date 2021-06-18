@@ -7,6 +7,7 @@ import {Tab1Screen} from '../screens/Tab1Screen';
 import {Tab2Screen} from '../screens/Tab2Screen';
 import {StackNavigator} from './StackNavigator';
 import {Platform, Text} from 'react-native';
+import {TopTabsNavigator} from './TopTabsNavigator';
 
 export const Tabs = () => {
   return Platform.OS === 'ios' ? <TabsIOS /> : <TabsAndroid />;
@@ -28,11 +29,11 @@ const TabsAndroid = () => {
           let iconName: string = '';
           switch (route.name) {
             case 'Tab1Screen':
-              iconName = 'T1';
+              iconName = '1';
               break;
 
-            case 'Tab2Screen':
-              iconName = 'T2';
+            case 'TopTabsNavigator':
+              iconName = '2';
               break;
 
             case 'StackNavigator':
@@ -49,9 +50,9 @@ const TabsAndroid = () => {
         component={Tab1Screen}
       />
       <BottomTabAndroid.Screen
-        name="Tab2Screen"
+        name="TopTabsNavigator"
         options={{title: 'Tab2'}}
-        component={Tab2Screen}
+        component={TopTabsNavigator}
       />
       <BottomTabAndroid.Screen
         name="StackNavigator"
@@ -117,9 +118,9 @@ const TabsIOS = () => {
         component={Tab1Screen}
       />
       <BottonTabIos.Screen
-        name="Tab2Screen"
+        name="TopTabsNavigator"
         options={{title: 'Tab2'}}
-        component={Tab2Screen}
+        component={TopTabsNavigator}
       />
       <BottonTabIos.Screen
         name="StackNavigator"
