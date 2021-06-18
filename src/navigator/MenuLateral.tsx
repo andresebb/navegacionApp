@@ -21,6 +21,11 @@ export const MenuLateral = () => {
   return (
     <Drawer.Navigator
       drawerType={dimensions.width >= 768 ? 'permanent' : 'front'}
+      edgeWidth={200}
+      drawerStyle={{
+        backgroundColor: '#c6cbef',
+        width: 240,
+      }}
       drawerContent={props => <MenuInterno {...props} />}>
       <Drawer.Screen name="Tabs" component={Tabs} />
       <Drawer.Screen name="SettingScreen" component={SettingScreen} />
