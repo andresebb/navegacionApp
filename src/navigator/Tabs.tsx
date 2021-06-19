@@ -8,6 +8,7 @@ import {Tab2Screen} from '../screens/Tab2Screen';
 import {StackNavigator} from './StackNavigator';
 import {Platform, Text} from 'react-native';
 import {TopTabsNavigator} from './TopTabsNavigator';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export const Tabs = () => {
   return Platform.OS === 'ios' ? <TabsIOS /> : <TabsAndroid />;
@@ -29,10 +30,10 @@ const TabsAndroid = () => {
           let iconName: string = '';
           switch (route.name) {
             case 'Tab1Screen':
-              iconName = '1';
+              iconName = 'alarm-outline';
               break;
 
-            case 'TopTabsNavigator':
+            case 'Tab2Screen':
               iconName = '2';
               break;
 
@@ -41,12 +42,14 @@ const TabsAndroid = () => {
               break;
           }
 
-          return <Text style={{color}}>{iconName}</Text>;
+          return (
+            <Icon style={{color}} name={iconName} size={25} color="#2bc48a" />
+          );
         },
       })}>
       <BottomTabAndroid.Screen
         name="Tab1Screen"
-        options={{title: 'Tab1'}}
+        options={{title: 'Alarm'}}
         component={Tab1Screen}
       />
       <BottomTabAndroid.Screen

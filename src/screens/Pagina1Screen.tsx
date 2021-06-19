@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react';
 import {DrawerScreenProps} from '@react-navigation/drawer';
-import {StackScreenProps} from '@react-navigation/stack';
 import {View, Text, Button} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {styles} from '../theme/appTheme';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 // Las props nos llegan debido al stackNavigator que creamos
 // interface Props extends StackScreenProps<any, any> {}
@@ -13,7 +13,13 @@ export const Pagina1Screen = ({navigation}: Props) => {
   useEffect(() => {
     navigation.setOptions({
       headerLeft: () => (
-        <Button title="Menu" onPress={() => navigation.toggleDrawer()} />
+        <Icon
+          name="menu-outline"
+          size={50}
+          color="#2bc48a"
+          onPress={() => navigation.toggleDrawer()}
+        />
+        // <Button title="Menuu" onPress={() => navigation.toggleDrawer()} />
       ),
     });
   }, []);
